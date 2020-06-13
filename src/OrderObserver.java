@@ -91,11 +91,15 @@ public class OrderObserver implements Observer {
                             currentCounter++;
                         }
                     }
-                    if (this.getLat() == null && orObElement.getLat() == null) {
-                        currentCounter++;
-                    }
+
 
                 }
+            } else {
+                differentCounter++;
+                if (this.getLat() == null && orObElement.getLat() == null) {
+                    currentCounter++;
+                }
+
             }
 
             //aqui debi haber usado optional para los casos de null
@@ -108,16 +112,17 @@ public class OrderObserver implements Observer {
                             currentCounter++;
                         }
                     }
-                    if (this.getLng() == null && orObElement.getLng() == null) {
-                        currentCounter++;
-                    }
+
 
                 }
+            } else {
+                differentCounter++;
+                if (this.getLng() == null && orObElement.getLng() == null) {
+                    currentCounter++;
+                }
+
             }
 
-
-//System.out.println("Valor de current " + currentCounter);
-            //          System.out.println("Valor de Differet " + differentCounter);
 
             if (currentCounter == differentCounter && currentCounter != 0) {
                 return false;
@@ -132,10 +137,3 @@ public class OrderObserver implements Observer {
     }
 }
 
-
-/*
-Documentacion:
-1- Una order con el atributo shopper=true y el atributo cooking_time=0 no puede asignarse
-2- Una order con el atributo partner=true y el atributo cooking_time=0 no puede asignarse
-3- Una order con el atributo lat=null y/o el atributo lng=null no puede asignarse
- */

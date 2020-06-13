@@ -8,9 +8,11 @@ public class Main {
         o.setShopper(true);
         o.setCookingTime(100);
         o.setPartner(true);
-        o.setLng("90E");
-        o.setLat("90E");
-        o.setCookingTime(0);
+        o.setLng("44W");
+        o.setLat("44N");
+        o.setCookingTime(1);
+        o.setLat(null);
+
 
         //SI se requiere agregar una nueva restriccion solo se debe de poner la siguiente linea con los valores deseados, para el caso de lng y lat se debe poner "empty" si no se desea evaluar
         // Constants.ORDERLIST.add(new Order(null, null , null, "empty", null));
